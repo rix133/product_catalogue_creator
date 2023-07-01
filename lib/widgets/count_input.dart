@@ -13,7 +13,7 @@ class CountInputState extends State<CountInput> {
   final TextEditingController _controller = TextEditingController(text:"1");
 
   void reset() {
-    _controller.clear();
+    _controller.text = "1";
   }
 
   @override

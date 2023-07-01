@@ -16,8 +16,8 @@ class SaveButton extends StatelessWidget {
 
   Future<void> _saveToCsv(BuildContext context) async {
     final List<List<dynamic>> rows = [
-      ['Barcode', 'Location', 'Timestamp', 'Notes'],
-      ...books.map((book) => [book.barcode, book.location,
+      ['barcode',  'count','location', 'timestamp', 'note'],
+      ...books.map((book) => [book.barcode, book.count, book.location,
         DateFormat('M/d/yyyy H:mm').format(book.timestamp), book.note]),
     ];
 
