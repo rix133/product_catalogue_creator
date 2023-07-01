@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class LocationInput extends StatelessWidget {
   final Function(String) onChangeLocation;
 
-  LocationInput({required this.onChangeLocation});
+  const LocationInput({super.key, required this.onChangeLocation});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         border: OutlineInputBorder(),
         labelText: 'Enter Location',
       ),

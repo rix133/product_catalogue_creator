@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NoteInput extends StatefulWidget {
   final Function(String) onChangeNote;
 
-  NoteInput({required this.onChangeNote});
+  const NoteInput({super.key, required this.onChangeNote});
 
   @override
   _NoteInputState createState() => _NoteInputState();
@@ -18,7 +18,7 @@ class _NoteInputState extends State<NoteInput> {
       padding: const EdgeInsets.all(16.0),
       child: TextField(
         controller: _controller,
-        decoration: InputDecoration(labelText: 'Note'),
+        decoration: const InputDecoration(labelText: 'Note'),
         onChanged: widget.onChangeNote,
       ),
     );

@@ -12,7 +12,7 @@ import 'book_list.dart';
 class SaveButton extends StatelessWidget {
   final List<Book> books;
 
-  SaveButton({required this.books});
+  const SaveButton({super.key, required this.books});
 
   Future<void> _saveToCsv(BuildContext context) async {
     final List<List<dynamic>> rows = [
@@ -24,7 +24,6 @@ class SaveButton extends StatelessWidget {
     final String csv = const ListToCsvConverter().convert(rows);
 
     final Directory directory = await getTemporaryDirectory();
-    if (directory != null) {
       final String filePath = '${directory.path}/books.csv';
       final File file = File(filePath);
 
@@ -34,7 +33,7 @@ class SaveButton extends StatelessWidget {
         final XFile xFile = XFile(filePath, mimeType: 'text/csv');
         Share.shareXFiles([xFile]);
       }
-    }
+
 
   }
 
@@ -43,13 +42,13 @@ class SaveButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100)
           )
       ),
       onPressed: () => _saveToCsv(context),
-      child: Icon(Icons.save),
+      child: const Icon(Icons.save),
     );
 
   }
