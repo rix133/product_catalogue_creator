@@ -47,7 +47,7 @@ class BookList extends StatelessWidget {
           ),
           title: Text(books[index].barcode),
           subtitle:
-          Text('${books[index].location} - ${DateFormat.yMMMd().format(books[index].timestamp)}'),
+          Text('${books[index].location} - ${DateFormat.yMMMd().format(books[index].timestamp)}, nr: ${books[index].count}'),
           trailing: IconButton(
             icon: const Icon(Icons.delete),
             color: Colors.red,

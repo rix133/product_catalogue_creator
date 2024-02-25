@@ -81,6 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
           )
       );
       _saveBooks();
+      _count = '1';
       _countInputKey.currentState?.reset();
 
     });
